@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-学习档案初始化脚本（interactive-tutor 技能配套工具）
+学习档案初始化脚本（moyu-teacher 技能配套工具）
 
 在指定目录下创建一套结构固定的 Markdown 学习档案，用于跨会话记录
 教学过程、掌握度状态和产出文档。
@@ -55,7 +55,7 @@ def build_files(topic: str, goal: str, level: str, today: str) -> dict:
 
     readme = f"""# 学习档案：{topic}
 
-> 本档案是该主题学习进度的**唯一权威记录**，由 interactive-tutor 技能维护。
+> 本档案是该主题学习进度的**唯一权威记录**，由 moyu-teacher 技能维护。
 > 每次学习开始前先读本文件与掌握度台账；每次学习结束后立即更新。
 
 ## 基本信息
@@ -307,7 +307,7 @@ def main() -> int:
     except Exception:
         pass
 
-    parser = argparse.ArgumentParser(description="初始化 interactive-tutor 学习档案")
+    parser = argparse.ArgumentParser(description="初始化 moyu-teacher 学习档案")
     parser.add_argument("--topic", required=True, help="学习主题，如 'Python 基础'")
     parser.add_argument("--path", default=".", help="档案输出目录，默认当前目录")
     parser.add_argument("--goal", default="", help="学习目标（可选）")

@@ -1,4 +1,4 @@
-# interactive-tutor · 交互式教学导师 Skill
+# moyu-teacher · 交互式教学导师 Skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Format: Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-blue)](#安装)
@@ -48,7 +48,7 @@ git clone https://github.com/joker20020/moyu-teacher.git
 cd moyu-teacher
 ```
 
-然后按你使用的 Agent 工具选择安装方式。**核心动作只有一个：把 `interactive-tutor/` 整个文件夹复制到该工具的 skills 发现目录，然后重启会话。**
+然后按你使用的 Agent 工具选择安装方式。**核心动作只有一个：把 `moyu-teacher/` 整个文件夹复制到该工具的 skills 发现目录，然后重启会话。**
 
 ### 豆包桌面端（Doubao）
 
@@ -57,14 +57,14 @@ Windows（PowerShell）：
 ```powershell
 $dst = "$env:LOCALAPPDATA\Doubao\User Data\Default\.doubao\agent_mode\workspace\.user_skills"
 New-Item -ItemType Directory -Force $dst | Out-Null
-Copy-Item -Recurse .\interactive-tutor $dst
+Copy-Item -Recurse .\moyu-teacher $dst
 ```
 
 macOS / Linux：
 
 ```bash
 mkdir -p ~/.doubao/agent_mode/workspace/.user_skills
-cp -r interactive-tutor ~/.doubao/agent_mode/workspace/.user_skills/
+cp -r moyu-teacher ~/.doubao/agent_mode/workspace/.user_skills/
 ```
 
 复制后重启豆包（或开启新会话）即可自动识别。若版本不同导致路径不存在，在豆包工作区目录下找到 `.user_skills` 文件夹放入即可。
@@ -75,21 +75,21 @@ cp -r interactive-tutor ~/.doubao/agent_mode/workspace/.user_skills/
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -r interactive-tutor ~/.claude/skills/
+cp -r moyu-teacher ~/.claude/skills/
 ```
 
 项目级（仅当前项目，可随仓库共享给团队）：
 
 ```bash
 mkdir -p .claude/skills
-cp -r interactive-tutor .claude/skills/
+cp -r moyu-teacher .claude/skills/
 ```
 
 Windows（PowerShell，个人级）：
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
-Copy-Item -Recurse .\interactive-tutor "$HOME\.claude\skills\"
+Copy-Item -Recurse .\moyu-teacher "$HOME\.claude\skills\"
 ```
 
 重启 Claude Code 后生效。详见官方文档：[Claude Code Skills](https://docs.claude.com/en/docs/claude/skills)。
@@ -99,7 +99,7 @@ Copy-Item -Recurse .\interactive-tutor "$HOME\.claude\skills\"
 方式一：从 GitHub 一行安装（推荐，需指定子目录 `--path`）：
 
 ```bash
-gemini skills install https://github.com/joker20020/moyu-teacher.git --path interactive-tutor --consent
+gemini skills install https://github.com/joker20020/moyu-teacher.git --path moyu-teacher --consent
 ```
 
 方式二：手动复制到用户级目录：
@@ -107,11 +107,11 @@ gemini skills install https://github.com/joker20020/moyu-teacher.git --path inte
 ```bash
 # Gemini 专属目录
 mkdir -p ~/.gemini/skills
-cp -r interactive-tutor ~/.gemini/skills/
+cp -r moyu-teacher ~/.gemini/skills/
 
 # 或跨工具通用目录（Gemini 同样会发现）
 mkdir -p ~/.agents/skills
-cp -r interactive-tutor ~/.agents/skills/
+cp -r moyu-teacher ~/.agents/skills/
 ```
 
 安装后在交互会话中用 `/skills list` 确认技能已出现。详见官方文档：[Gemini CLI Agent Skills](https://geminicli.com/docs/cli/skills.md)。
@@ -123,23 +123,23 @@ cp -r interactive-tutor ~/.agents/skills/
 ```bash
 # 全局（macOS / Linux）
 mkdir -p ~/.cursor/skills
-cp -r interactive-tutor ~/.cursor/skills/
+cp -r moyu-teacher ~/.cursor/skills/
 
 # 或仅当前项目
 mkdir -p .cursor/skills
-cp -r interactive-tutor .cursor/skills/
+cp -r moyu-teacher .cursor/skills/
 ```
 
 Windows（PowerShell，全局）：
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\.cursor\skills" | Out-Null
-Copy-Item -Recurse .\interactive-tutor "$HOME\.cursor\skills\"
+Copy-Item -Recurse .\moyu-teacher "$HOME\.cursor\skills\"
 ```
 
 也可以在 **Settings → Rules, Skills, Subagents → New → Add from GitHub** 中填入本仓库地址安装，安装后重启 Cursor。
 
-旧版 Cursor 仅支持 Rules：将 `interactive-tutor/SKILL.md` 的正文转存为 `.cursor/rules/interactive-tutor.mdc`（frontmatter 按 Cursor Rules 格式调整）即可，scripts 与 references 放在同级目录引用。
+旧版 Cursor 仅支持 Rules：将 `moyu-teacher/SKILL.md` 的正文转存为 `.cursor/rules/moyu-teacher.mdc`（frontmatter 按 Cursor Rules 格式调整）即可，scripts 与 references 放在同级目录引用。
 
 ### 其他兼容 Agent Skills 标准的工具
 
@@ -148,10 +148,10 @@ Copy-Item -Recurse .\interactive-tutor "$HOME\.cursor\skills\"
 
 ```bash
 mkdir -p ~/.agents/skills
-cp -r interactive-tutor ~/.agents/skills/
+cp -r moyu-teacher ~/.agents/skills/
 ```
 
-也可以尝试社区安装器：`npx skills add https://github.com/joker20020/moyu-teacher`，按交互提示选择 `interactive-tutor` 目录。
+也可以尝试社区安装器：`npx skills add https://github.com/joker20020/moyu-teacher`，按交互提示选择 `moyu-teacher` 目录。
 
 ### 验证安装成功
 
@@ -194,7 +194,7 @@ Agent 应先与你确认目标和基础，随后在当前目录创建 `学习档
 
 ```
 moyu-teacher/
-└── interactive-tutor/          # 技能本体（安装时复制这个文件夹）
+└── moyu-teacher/          # 技能本体（安装时复制这个文件夹）
     ├── SKILL.md                # 技能主文件：触发条件与教学全流程
     ├── scripts/
     │   └── init_archive.py     # 一键创建学习档案（含全套模板）
