@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 在本仓库目录内试用技能时生成的学习档案，不纳入版本库
+学习档案-*/
+
+# 操作系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
