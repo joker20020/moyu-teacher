@@ -87,6 +87,7 @@ def build_files(topic: str, goal: str, level: str, today: str) -> dict:
 | [notes/](notes/) | 知识笔记与讲义，每个知识块一个文件 | 讲完一个知识块后 |
 | [exercises/](exercises/) | 随堂练习、阶段测验及答案解析 | 出题时 |
 | [reports/](reports/) | 阶段掌握度评估报告、结课报告、复习计划 | 阶段评估与结课时 |
+| [答疑记录/](答疑记录/) | 课后答疑记录（解答助教角色），一问一份，含复习自测 | 每次答疑后由 init_qa.py 生成 |
 
 ## 掌握度等级速查
 
@@ -269,6 +270,18 @@ graph TD
 报告须基于 `02-掌握度台账.md` 的真实证据撰写，区分"已掌握"与"仍薄弱"。
 """
 
+    qa_records_readme = """# 答疑记录
+
+每个问题一份记录，命名 `YYYY-MM-DD-问题简述.md`，供学生课后复习。
+本目录由 moyu-teacher 技能「解答助教」角色维护（scripts/init_qa.py 自动登记下表）；
+记录规范见技能 `references/qa-playbook.md`。
+
+## 索引
+
+| 日期 | 问题 | 科目/知识点 | 学生 | 复习自测 |
+|---|---|---|---|---|
+"""
+
     return {
         "README.md": readme,
         "00-学习计划.md": plan,
@@ -279,6 +292,7 @@ graph TD
         "notes/README.md": notes_readme,
         "exercises/README.md": exercises_readme,
         "reports/README.md": reports_readme,
+        "答疑记录/README.md": qa_records_readme,
     }
 
 

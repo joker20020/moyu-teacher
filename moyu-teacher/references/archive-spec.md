@@ -38,7 +38,8 @@ python <skill目录>/scripts/init_archive.py --topic "主题" --path . --goal "�
 ├── 04-错题本.md         # 错题、错因、正解、重做安排
 ├── notes/              # 讲义笔记，NN-知识点名.md
 ├── exercises/          # 随堂练习 NN-*.md、阶段测验 阶段测验M*.md
-└── reports/            # 阶段评估、结课报告、复习计划
+├── reports/            # 阶段评估、结课报告、复习计划
+└── 答疑记录/            # 角色 C 课后答疑，一问一份 YYYY-MM-DD-问题简述.md（含索引 README）
 ```
 
 单一事实来源原则：
@@ -101,6 +102,13 @@ python <skill目录>/scripts/init_archive.py --topic "主题" --path . --goal "�
 
 - 每道错题：题目、学生作答、错因标签、错因分析、正确思路、同类练习指引、重做安排、状态。
 - 重做日期对应间隔复习；三次重做均正确可标 ✅ 已过关，记录保留不删除。
+
+### 答疑记录/（角色 C 产出）
+
+- 一问一份，命名 `YYYY-MM-DD-问题简述.md`，由 `scripts/init_qa.py --archive <本档案目录>` 生成并登记索引；
+- 记录是一页内的复习卡片（原问→疑问定位→简洁解答→复习自测→跟进），写作规范见 `references/qa-playbook.md`；
+- 答疑当场的复述/自测结果是有效行为证据，可据此更新台账并在日志追加一行；**仅"来提问"不构成降级依据**；
+- 同一知识点短期内被答疑 ≥2 次，视为掌握缺口信号，安排角色 A 的讲解与变式练习。
 
 ### notes/、exercises/、reports/
 
