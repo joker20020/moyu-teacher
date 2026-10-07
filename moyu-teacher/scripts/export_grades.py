@@ -637,7 +637,7 @@ def write_review_kit(d, stats, exports_dir: Path, force_flag: bool):
         L2.append("- **正确思路推导**：（板书关键步骤，留白让学生补）")
         L2.append("- **方法提炼（一句话规则/步骤卡）**：")
         L2.append("- **变式题**：（同构换情境，难度相当；附答案与采分点）")
-        L2.append("- **预设与对策**：（仍答错时回退到哪一级提示，见 teaching-playbook 第 4 节）")
+        L2.append("- **预设与对策**：（仍答错时回退到哪一级提示，见 teaching-playbook 第 5 节）")
         L2.append("")
     L2.append("## 七、板书 / 课件")
     L2.append("")
